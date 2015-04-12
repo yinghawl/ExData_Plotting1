@@ -14,4 +14,6 @@
         data<-data_selected 
         
 ## Step2: Plot 1
+        png("plot1.png",490,350)
         hist(data[,3],main="Global Active Power",xlab="Global Active Power(kilowatts)",col="red")
+        dev.off()

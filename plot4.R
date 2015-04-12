@@ -17,6 +17,7 @@
         ## Selecting graphic parameters
         par(mfcol=c(2,2))
         ## First Plot on the topleft
+        png("plot4.png",490,350)
         plot(data[,3]~data[,10],xaxt="n",xlab="",ylab="Global Active Power",type="l") 
         a<-range(data$datetime)
         axis.POSIXct(side=1,at=seq(a[1],a[2],by="days"),format="%a")
@@ -36,4 +37,5 @@
         ## Forth plot on the bottomright
         plot(data[,4]~data[,10],xaxt="n",xlab="datetime",ylab="Global_reactive_power",type="l")
         axis.POSIXct(side=1,at=seq(a[1],a[2],by="days"),format="%a")
+        dev.off()
         

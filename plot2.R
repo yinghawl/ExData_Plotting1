@@ -14,6 +14,8 @@
         data<-data_selected
         
 ##Step2: Plot 2
+        png("plot2.png",490,350)
         plot(data[,3]~data[,10],xaxt="n",ylab="Global Active Power (kilowatts)",xlab="",type="l")
         a<-range(data$datetime)
         axis.POSIXct(side=1,at=seq(a[1],a[2],by="days"),format="%a")
+        dev.off()

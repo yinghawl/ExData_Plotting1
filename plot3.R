@@ -14,9 +14,11 @@
         data<-data_selected
 
 ##Step2: Plot 3
+        png("plot3.png",490,350)
         plot(data[,7]~data[,10],xaxt="n",col="black",type="l",ylab="Energy sub metering",xlab="")
         lines(data[,8]~data[,10],xaxt="n",col="red",type="l")    
         lines(data[,9]~data[,10],xaxt="n",col="blue",type="l")
         legend("topright",lty=c(1,1,1),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"))
         a<-range(data$datetime)
         axis.POSIXct(side=1,at=seq(a[1],a[2],by="days"),format="%a")
+        dev.off()
